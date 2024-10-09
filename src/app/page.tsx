@@ -1,5 +1,6 @@
 "use client";
 import ContactForm from "./components/ContactForm";
+import Image from 'next/image';
 
 export default function Home() {
   const onDevelopment = process.env.NEXT_PUBLIC_ON_DEVELOPMENT;
@@ -13,7 +14,7 @@ export default function Home() {
       </header>
 
       <main className="flex-grow flex-col mt-16 mb-16 flex items-center justify-center">
-        {onDevelopment !== "true" ? (
+        {onDevelopment === "true" ? (
           <img
             src="https://www.clipartmax.com/png/small/265-2655834_work-in-progress-icon.png"
             alt="Work In Progress Icon @clipartmax.com"
@@ -44,14 +45,14 @@ export default function Home() {
       </main>
 
       <footer className="fixed bottom-0 left-0 right-0 z-10 bg-white shadow-xl mt-2">
-        <div className="mr-2 px-6 py-2 flex justify-end space-x-6">
+        <div className="px-6 py-2 flex justify-end space-x-6">
           <a
             href="https://t.me/fedelmar"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:text-blue-700"
           >
-            <img src="/telegram.svg" alt="Telegram" className="w-8 h-8" />
+            <Image src="/telegram.svg" alt="Telegram" width={28} height={28} />
           </a>
           <a
             href="https://www.instagram.com/fe.delmar"
@@ -59,7 +60,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="text-pink-500 hover:text-pink-700"
           >
-            <img src="/instagram.svg" alt="Instagram" className="w-8 h-8" />
+            <Image src="/instagram.svg" alt="Instagram"  width={28} height={28} />
           </a>
         </div>
       </footer>
