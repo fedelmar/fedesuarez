@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Federico Suarez",
-  description: "Artista - Músico",
+  title: "Galeria de canciones - Federico Suarez",
+  description: "Galeria de canciones - Federico Suarez - Artista | Músico",
 };
 
 export default function RootLayout({

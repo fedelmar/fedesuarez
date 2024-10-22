@@ -1,33 +1,35 @@
-'use client';
-import { FormEvent, useState } from 'react';
+"use client";
+import { FormEvent, useState } from "react";
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("/api/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, email, message }),
       });
 
       if (response.ok) {
-        alert('Mensaje enviado con éxito');
-        setName('');
-        setEmail('');
-        setMessage('');
+        alert("Mensaje enviado con éxito");
+        setName("");
+        setEmail("");
+        setMessage("");
       } else {
-        throw new Error('Error al enviar el mensaje');
+        throw new Error("Error al enviar el mensaje");
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+      console.error("Error:", error);
+      alert(
+        "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+      );
     }
   };
 
